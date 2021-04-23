@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<td width="720">
+    <div id="dialog-window">
+        <div id="scrollable-content">
+            <ul>
+                {% for i in dialog %}
+                <table>
+                    <tr>
+                        <li>
+                            <td><a href="/user_profile/{{ i.user.id }}"><img src="/static/img/{{i.user.image}}"
+                                                                             width="25" height="25"></a></td>
+
+                            <td>
+                                <a href="/user_profile/{{ i.user.id }}">
+                                    {{ i.user.name }}
+                                </a>
+                                <br>
+                                {{ i.text }}
+                            </td>
+                        </li>
+                    </tr>
+                </table>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="footer">
+        </div>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+            <p>{{ form.content.label }}<br>
+                {{ form.content(class="form-control") }}<br>
+            </p>
+            <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+            {{message}}
+        </form>
+    </div>
+</td>
+{% endblock %}

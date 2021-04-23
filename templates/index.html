@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<td width="720">
+    <h1>Записи в блоге</h1>
+    {% if current_user.is_authenticated %}
+    <a href="news" class="btn btn-secondary">Добавить новость</a><br>
+    {% endif %}
+    {% for item in news[::-1] %}
+
+
+    <div class="col-md6 border rounded">
+        <div>
+            <a href="user_profile/{{item.user.id}}"><img src="static/img/{{item.user.id}}.png" width="45"
+                                                         height="45"></a><a href="user_profile/{{ item.user.id }}">
+            Автор - {{item.user.name}}</a>, Дата написания - {{item.created_date}}
+        </div>
+        <h2>{{item.title}}</h2>
+        <div>
+            {{item.content}}
+        </div>
+        <br>
+
+        {% if item.image %}
+        <img src="/static/other_img/{{ item.image }}">
+        {% endif %}
+        {% if current_user.is_authenticated and current_user == item.user %}
+        <div>
+            <a href="/news/{{ item.id }}" class="btn btn-warning">Изменить</a>
+            <a href="/news_delete/{{ item.id }}" class="btn btn-danger">Удалить</a>
+        </div>
+        {% endif %}
+    </div>
+
+    {% endfor %}
+</td>
+{% endblock %}

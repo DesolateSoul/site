@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<td>
+    <img src="{{iimg}}" width="200" height="200"><br>
+    {% if current_user.is_authenticated %}
+    {% if current_user != user %}
+    <a href="/dialog/{{ user.id }}" class="btn btn-warning">Перейти к диалогу</a>
+    {% else %}
+    <form action="" method=post enctype=multipart/form-data>
+        <p><input type=file name=file>
+            <br><input type=submit value=Загрузить>
+    </form>
+    <a href="/logout" class="btn btn-warning">Выйти из профиля</a>
+    {% endif %}
+    {% endif %}
+</td>
+<td width="720">
+    <h1>Записи в блоге {{user.name}}</h1>
+    {% if current_user == user %}
+    <a href="/news" class="btn btn-secondary">Добавить новость</a>
+    {% endif %}
+    {% for item in news%}
+    <div class="col-md6 border rounded">
+        <h2>{{item.title}}</h2>
+        <div>
+            {{item.content}}
+        </div>
+        <div>
+            Автор - {{item.user.name}}, Дата написания - {{item.created_date}}
+        </div>
+        {% if current_user.is_authenticated and current_user == user %}
+        <div>
+            <a href="/news/{{ item.id }}" class="btn btn-warning">Изменить</a>
+            <a href="/news_delete/{{ item.id }}" class="btn btn-danger">Удалить</a>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</td>
+{% endblock %}

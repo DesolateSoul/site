@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<td width="720">
+    {% for user in dialogs %}
+    <a href="/dialog/{{ user.id }}"><li><img src="static/img/{{ user.img }}">{{ user.name }}</li></a>
+    {% endfor %}
+</td>
+{% endblock %}

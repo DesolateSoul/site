@@ -1,0 +1,12 @@
+#dialog-window {
+  height: 600px;
+}
+
+#scrollable-content {
+  height: 590px;
+  overflow: auto;
+}
+
+#footer {
+  height: 10px;
+}
