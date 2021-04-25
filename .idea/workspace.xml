@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ceae567e-42c9-4c29-bc2d-94d487a0105a" name="Default Changelist" comment="minor fixes" />
+    <list default="true" id="ceae567e-42c9-4c29-bc2d-94d487a0105a" name="Default Changelist" comment="port">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/blogs.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +26,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.arrow">
+  <component name="RunManager" selected="Python.main">
     <configuration name="arrow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="site1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -67,8 +71,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.arrow" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.arrow" />
       </list>
     </recent_temporary>
   </component>
@@ -109,7 +113,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619343726643</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="req upd">
+      <created>1619343971907</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619343971907</updated>
+    </task>
+    <task id="LOCAL-00006" summary="port">
+      <created>1619344427229</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1619344427229</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="venv fixed" />
     <MESSAGE value="minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
+    <MESSAGE value="req upd" />
+    <MESSAGE value="port" />
+    <option name="LAST_COMMIT_MESSAGE" value="port" />
   </component>
 </project>
