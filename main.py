@@ -1,9 +1,9 @@
+import os
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask import Flask, render_template, redirect, request, abort, url_for
 from flask_ngrok import run_with_ngrok
-import os
+from flask_restful import reqparse, abort, Api, Resource
 from PIL import Image
-from data import db_session
 from data.login_form import LoginForm
 from data.news_form import NewsForm
 from data.dialog_form import DialogForm
@@ -11,8 +11,10 @@ from data.dialogs import Dialogs
 from data.users import User
 from data.news import News
 from data.register_form import RegisterForm
+from data import db_session, news_resources
 
 app = Flask(__name__)
+api = Api(app)
 run_with_ngrok(app)
 UPLOAD_FOLDER = 'static/img'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'gif', 'jpeg'}
@@ -242,6 +244,8 @@ def dialogs():
 
 def main():
     db_session.global_init("db/blogs.sqlite")
+    api.add_resource(news_resources.NewsListResource, '/api/news')
+    api.add_resource(news_resources.NewsResource, '/api/news/<int:news_id>')
     app.run()
 
 
