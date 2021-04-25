@@ -1,8 +1,7 @@
 import os
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask import Flask, render_template, redirect, request, abort, url_for
-from flask_ngrok import run_with_ngrok
-from flask_restful import reqparse, abort, Api, Resource
+from flask_restful import abort, Api
 from PIL import Image
 from data.login_form import LoginForm
 from data.news_form import NewsForm
@@ -15,7 +14,6 @@ from data import db_session, news_resources
 
 app = Flask(__name__)
 api = Api(app)
-run_with_ngrok(app)
 UPLOAD_FOLDER = 'static/img'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'gif', 'jpeg'}
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
