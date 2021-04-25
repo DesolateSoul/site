@@ -11,8 +11,8 @@
 
     <div class="col-md6 border rounded">
         <div>
-            <a href="user_profile/{{item.user.id}}"><img src="static/img/{{item.user.id}}.png" width="45"
-                                                         height="45"></a><a href="user_profile/{{ item.user.id }}">
+            <a href="user_profile/{{item.user.id}}">
+                <img src="static/img/{{item.user.image}}" width="45" height="45"></a><a href="user_profile/{{ item.user.id }}">
             Автор - {{item.user.name}}</a>, Дата написания - {{item.created_date}}
         </div>
         <h2>{{item.title}}</h2>
