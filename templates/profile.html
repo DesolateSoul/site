@@ -29,6 +29,10 @@
         <div>
             Автор - {{item.user.name}}, Дата написания - {{item.created_date}}
         </div>
+        <br>
+        {% if item.image %}
+        <img src="/static/other_img/{{ item.image }}">
+        {% endif %}
         {% if current_user.is_authenticated and current_user == user %}
         <div>
             <a href="/news/{{ item.id }}" class="btn btn-warning">Изменить</a>
