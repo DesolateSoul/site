@@ -245,8 +245,8 @@ def main():
     db_session.global_init("db/blogs.sqlite")
     api.add_resource(news_resources.NewsListResource, '/api/news')
     api.add_resource(news_resources.NewsResource, '/api/news/<int:news_id>')
-    if 'liveconsole' not in gethostname():
-        app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
 
 
 if __name__ == '__main__':
