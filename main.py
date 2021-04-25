@@ -1,4 +1,5 @@
 import os
+from socket import gethostname
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask import Flask, render_template, redirect, request, abort, url_for
 from flask_restful import abort, Api
@@ -244,7 +245,8 @@ def main():
     db_session.global_init("db/blogs.sqlite")
     api.add_resource(news_resources.NewsListResource, '/api/news')
     api.add_resource(news_resources.NewsResource, '/api/news/<int:news_id>')
-    app.run()
+    if 'liveconsole' not in gethostname():
+        app.run()
 
 
 if __name__ == '__main__':
